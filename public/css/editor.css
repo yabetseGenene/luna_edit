@@ -17,7 +17,7 @@
     width: 100%;
     padding: 3px 2px 0px 2px;
     margin: auto;
-    background: #ffffff88;
+    background: #f8f8f8;
     border-radius: 1px;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -29,14 +29,13 @@
     outline: none !important;
     box-shadow: none !important;
     border: none !important;
-    background: rgba(255, 255, 255, .5);
+    background: #f8f8f8;
     color: #545A60;
     font-size: .84em;
     padding: 10px 15px;
     text-align: center;
     transition: all 0.2s ease-in-out;
     margin: auto 0px 3px 0px !important;
-    background-color: #fff;
     display: inline-block;
     vertical-align: middle;
 }
