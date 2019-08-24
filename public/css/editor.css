@@ -17,11 +17,11 @@
     width: 100%;
     padding: 3px 2px 0px 2px;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     background: #ffffff88;
     border-radius: 1px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .txt-edit-tool
@@ -35,8 +35,10 @@
     padding: 10px 15px;
     text-align: center;
     transition: all 0.2s ease-in-out;
-    margin-bottom: 3px;
-    background-color: #fafafa;
+    margin: auto 0px 3px 0px !important;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .txt-edit-tool:hover
