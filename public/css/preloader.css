@@ -1,0 +1,87 @@
+
+
+body
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: #605764;
+    height: 100vh;
+}
+
+.icon_centered
+{
+    width: 120px;
+    height: 120px;
+    animation: spin 3s linear infinite;
+    -webkit-animation: spin 3s linear infinite;
+    -moz-animation: spin 3s linear infinite;
+}
+
+.preloader_content_container
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+}
+
+.rotating_div
+{
+    width: 140px;
+    height: 140px;
+    border: 5px solid #F1F1F1;
+    border-radius: 500%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    animation: spin 25s linear infinite;
+    -webkit-animation: spin 25s linear infinite;
+    -moz-animation: spin 25s linear infinite;
+}
+
+.satellite
+{
+    color: #F1F1F1;
+    position: absolute;
+    top: -40px;
+}
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
