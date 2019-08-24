@@ -154,7 +154,7 @@
     font-size: 1.3em;
 }
 
-.languageIcon, .uploadIcon
+.languageIcon, .uploadIcon, .fileIcon
 {
     font-size: 1.4em;
 }
@@ -420,4 +420,3 @@
 {
     color: #00C39D;
 }
-

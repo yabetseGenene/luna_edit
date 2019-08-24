@@ -30,6 +30,8 @@ let highight_color_selector = document.querySelector('#edtr-actual-hilight');
 
 let toggleEdit = document.querySelector('#edtr-toggle');
 
+let newFile = document.querySelector('#edtr-new-file');
+
 let saveModal = document.querySelector('#save-to-cloud');
 let save = document.querySelector('#edtr-save');
 let cancelSaveToCloud = document.querySelector('#cancel-stc');
@@ -243,6 +245,14 @@ continueConversion.addEventListener('click', () => {
 cancelLang.addEventListener('click', () => {
   lang.click();
 });
+
+newFile.addEventListener("mouseover", e => {
+  document.querySelector('#new-file-popup').classList.toggle('hovered');
+}, false);
+
+newFile.addEventListener("mouseout", e => {
+  document.querySelector('#new-file-popup').classList.toggle('hovered');
+}, false);
 
 save.addEventListener("mouseover", e => {
   document.querySelector('#save-popup').classList.toggle('hovered');
