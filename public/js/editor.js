@@ -27,23 +27,31 @@ let color = document.querySelector('#edtr-color');
 let horizontalLine = document.querySelector('#edtr-horizontal-line');
 let highlighter = document.querySelector('#edtr-highlight')
 let highight_color_selector = document.querySelector('#edtr-actual-hilight');
+let sidebarToggle = document.querySelector('#edtr-sidebar-toggle');
+let sidebarBack = document.querySelector('.edtr-sidebar-back');
 
-let toggleEdit = document.querySelector('#edtr-toggle');
+sidebarToggle.addEventListener('click', () => {
+  document.querySelector('.sidebar').classList.toggle('hiddenSidebar');
+});
 
-let newFile = document.querySelector('#edtr-new-file');
+sidebarBack.addEventListener('click', () => {
+  sidebarToggle.click();
+})
+
+let toggleEdit = document.querySelectorAll('.edtr-toggle');
 
 let saveModal = document.querySelector('#save-to-cloud');
-let save = document.querySelector('#edtr-save');
+let save = document.querySelectorAll('.edtr-save');
 let cancelSaveToCloud = document.querySelector('#cancel-stc');
 
 let exportModal = document.querySelector('#exprot-file');
-let export_ = document.querySelector('#edtr-export');
+let export_ = document.querySelectorAll('.edtr-export');
 let cancelExport = document.querySelector('#cancel-exp');
 
-let uploadButton = document.querySelector('#edtr-upload');
+let uploadButton = document.querySelectorAll('.edtr-upload');
 let fileButton = document.querySelector('#actualFileBtn');
 
-let lang = document.querySelector('#edtr-lang');
+let lang = document.querySelectorAll('.edtr-lang');
 let noticeModal = document.querySelector('#eng-to-amh-notice');
 let cancelLang = document.querySelector('#cancel-lang');
 let continueConversion = document.querySelector('#continueConversion');
@@ -63,8 +71,6 @@ let toggleDesingMode = () => {
       editorContent.document.designMode = 'On';
       isInEditMode = true;
     }
-
-    toggleEdit.classList.toggle('edit-mode-on');
 }
 
 let executeCommand = (command, arg) => {
@@ -206,90 +212,99 @@ cancel.addEventListener('click', function () {
     link.click();
 });
 
+toggleEdit.forEach( btn => {
+  btn.addEventListener('click', e => {
+    toggleDesingMode();
+    document.querySelector('.luna_logo').style.display = 'none';
+    toggleEdit.forEach( btn => {
+      btn.classList.toggle('edit-mode-on');
+    })
+  });
+
+  btn.addEventListener("mouseover", e => {
+    document.querySelector('#edit-popup').classList.toggle('hovered');
+  }, false);
+
+  btn.addEventListener("mouseout", e => {
+    document.querySelector('#edit-popup').classList.toggle('hovered');
+  }, false);
+
+});
+
+save.forEach( btn => {
+  btn.addEventListener('click', () => {
+    saveModal.classList.toggle('hide');
+  });
+
+  btn.addEventListener("mouseover", e => {
+    document.querySelector('#save-popup').classList.toggle('hovered');
+  }, false);
+
+  btn.addEventListener("mouseout", e => {
+    document.querySelector('#save-popup').classList.toggle('hovered');
+  }, false);
+
+});
+
+export_.forEach( btn => {
+  btn.addEventListener('click', () => {
+    exportModal.classList.toggle('hide');
+  });
+
+  btn.addEventListener("mouseover", e => {
+    document.querySelector('#export-popup').classList.toggle('hovered');
+  }, false);
+
+  btn.addEventListener("mouseout", e => {
+    document.querySelector('#export-popup').classList.toggle('hovered');
+  }, false);
+
+});
+
+uploadButton.forEach( btn => {
+  btn.addEventListener('click', () => {
+      fileButton.click();
+  });
+
+  btn.addEventListener("mouseover", e => {
+    document.querySelector('#upload-popup').classList.toggle('hovered');
+  }, false);
+
+  btn.addEventListener("mouseout", e => {
+    document.querySelector('#upload-popup').classList.toggle('hovered');
+  }, false);
+
+});
+
+lang.forEach( btn => {
+  btn.addEventListener('click', () => {
+    noticeModal.classList.toggle('hide');
+  });
+
+  btn.addEventListener("mouseover", e => {
+    document.querySelector('#lang-popup').classList.toggle('hovered');
+  }, false);
+
+  btn.addEventListener("mouseout", e => {
+    document.querySelector('#lang-popup').classList.toggle('hovered');
+  }, false);
+
+});
 
 
-toggleEdit.addEventListener('click', () => {
-  toggleDesingMode();
-  document.querySelector('.luna_logo').style.display = 'none';
-})
-
-save.addEventListener('click', () => {
+cancelSaveToCloud.addEventListener('click', () => {
   saveModal.classList.toggle('hide');
 });
 
-cancelSaveToCloud.addEventListener('click', () => {
-  save.click();
-});
-
-export_.addEventListener('click', () => {
+cancelExport.addEventListener('click', () => {
   exportModal.classList.toggle('hide');
 });
 
-cancelExport.addEventListener('click', () => {
-  export_.click();
-});
-
-uploadButton.addEventListener('click', () => {
-    fileButton.click();
-});
-
-
-lang.addEventListener('click', () => {
-  noticeModal.classList.toggle('hide');
-});
 
 continueConversion.addEventListener('click', () => {
   console.log('conversion started')
 });
 
 cancelLang.addEventListener('click', () => {
-  lang.click();
+  noticeModal.classList.toggle('hide');
 });
-
-newFile.addEventListener("mouseover", e => {
-  document.querySelector('#new-file-popup').classList.toggle('hovered');
-}, false);
-
-newFile.addEventListener("mouseout", e => {
-  document.querySelector('#new-file-popup').classList.toggle('hovered');
-}, false);
-
-save.addEventListener("mouseover", e => {
-  document.querySelector('#save-popup').classList.toggle('hovered');
-}, false);
-
-save.addEventListener("mouseout", e => {
-  document.querySelector('#save-popup').classList.toggle('hovered');
-}, false);
-
-uploadButton.addEventListener("mouseover", e => {
-  document.querySelector('#upload-popup').classList.toggle('hovered');
-}, false);
-
-uploadButton.addEventListener("mouseout", e => {
-  document.querySelector('#upload-popup').classList.toggle('hovered');
-}, false);
-
-export_.addEventListener("mouseover", e => {
-  document.querySelector('#export-popup').classList.toggle('hovered');
-}, false);
-
-export_.addEventListener("mouseout", e => {
-  document.querySelector('#export-popup').classList.toggle('hovered');
-}, false);
-
-lang.addEventListener("mouseover", e => {
-  document.querySelector('#lang-popup').classList.toggle('hovered');
-}, false);
-
-lang.addEventListener("mouseout", e => {
-  document.querySelector('#lang-popup').classList.toggle('hovered');
-}, false);
-
-toggleEdit.addEventListener("mouseover", e => {
-  document.querySelector('#edit-popup').classList.toggle('hovered');
-}, false);
-
-toggleEdit.addEventListener("mouseout", e => {
-  document.querySelector('#edit-popup').classList.toggle('hovered');
-}, false);
