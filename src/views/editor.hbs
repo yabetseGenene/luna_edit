@@ -24,27 +24,28 @@
       </div>
       <span class="luna_name">luna</span>
       <div class="top_actual_menu">
-        <button class="pill-button" id="edtr-toggle">
+        <button class="pill-button" id="edtr-sidebar-toggle">
+          <i class="fas fa-bars"></i>
+          <span class="pill-btn-txt">sidebar toggle</span>
+        </button>
+        <button class="pill-button edtr-toggle topbar_buttons">
           <i class="fas fa-pen-alt toggleIcon"></i>
           <span class="pill-btn-txt">toggle edit</span>
         </button>
-        <a href="/editor" class="pill-button" id="edtr-new-file" target="_blank">
-          <i class="far fa-file fileIcon"></i>
-        </a>
-        <button class="pill-button" id="edtr-save">
+        <button class="pill-button edtr-save topbar_buttons">
           <i class="far fa-compass saveIcon"></i>
           <span class="pill-btn-txt">save</span>
         </button>
-        <button class="pill-button" id="edtr-upload">
+        <button class="pill-button edtr-upload topbar_buttons">
           <i class="fas fa-file-upload uploadIcon"></i>
           <span class="pill-btn-txt">upload</span>
           <input type="file" id="actualFileBtn">
         </button>
-        <button class="pill-button" id="edtr-export">
+        <button class="pill-button edtr-export topbar_buttons">
           <i class="fas fa-file-export exportIcon"></i>
           <span class="pill-btn-txt">export</span>
         </button>
-        <button class="pill-button" id="edtr-lang">
+        <button class="pill-button edtr-lang topbar_buttons">
           <i class="fas fa-language languageIcon"></i>
           <span class="pill-btn-txt">lu-ሉ</span>
         </button>
@@ -216,6 +217,33 @@
     <div class="editor-content-container ">
       <img src="/SVG/logo_off_white.svg" class="luna_logo" width="240px" />
       <iframe class="editor-content " name="editorContent"></iframe>
+    </div>
+    <div class="sidebar hiddenSidebar">
+      <button class="pill-button edtr-sidebar-back">
+        <i class="fas fa-arrow-left toggleIcon"></i>
+        <span class="pill-btn-txt">back</span>
+      </button>
+      <button class="pill-button edtr-toggle">
+        <i class="fas fa-pen-alt toggleIcon"></i>
+        <span class="pill-btn-txt">toggle edit</span>
+      </button>
+      <button class="pill-button edtr-save">
+        <i class="far fa-compass saveIcon"></i>
+        <span class="pill-btn-txt">save</span>
+      </button>
+      <button class="pill-button edtr-upload">
+        <i class="fas fa-file-upload uploadIcon"></i>
+        <span class="pill-btn-txt">upload</span>
+        <input type="file" id="actualFileBtn">
+      </button>
+      <button class="pill-button edtr-export">
+        <i class="fas fa-file-export exportIcon"></i>
+        <span class="pill-btn-txt">export</span>
+      </button>
+      <button class="pill-button edtr-lang">
+        <i class="fas fa-language languageIcon"></i>
+        <span class="pill-btn-txt">lu-ሉ</span>
+      </button>
     </div>
   </div>
   <div class="popupContainer">

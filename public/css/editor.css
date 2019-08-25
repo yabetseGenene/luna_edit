@@ -346,20 +346,6 @@
     display: none;
 }
 
-@media (max-width:530px)
-{
-    .popup
-    {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
 .edtr-notice-paragraph
 {
     max-width: 400px;
@@ -421,4 +407,66 @@
 .edit-mode-on
 {
     color: #00C39D;
+}
+
+
+#edtr-sidebar-toggle{
+  display: none;
+}
+
+.sidebar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    padding: 10px;
+    z-index: 999;
+    -webkit-box-shadow: -3px -2px 14px -5px rgba(0,0,0,0.55);
+    -moz-box-shadow: -3px -2px 14px -5px rgba(0,0,0,0.55);
+    box-shadow: -3px -2px 14px -5px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.5s ease-in-out;
+    background-color: #605768;
+    visibility: hidden;
+}
+
+.sidebar > .pill-button{
+  margin: 5px auto;
+}
+
+.hiddenSidebar
+{
+    right: -100px;
+}
+
+@media (max-width:530px)
+{
+    .popup
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #edtr-sidebar-toggle{
+      display: block;
+    }
+
+    .topbar_buttons{
+      display: none;
+    }
+
+    .sidebar{
+      visibility: visible;
+    }
+
 }
