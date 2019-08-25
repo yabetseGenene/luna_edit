@@ -24,6 +24,22 @@
     white-space: nowrap;
 }
 
+.editor-tools::-webkit-scrollbar {
+    width: 2px;
+    height: 3px;
+    background-color: #F5F5F5;
+}
+
+.editor-tools::-webkit-scrollbar-thumb {
+    background-color: RGBA(96, 87, 100, 1.00);
+}
+
+.editor-tools::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px RGBA(96, 87, 100, .3);
+    background-color: #F5F5F5;
+}
+
+
 .txt-edit-tool
 {
     outline: none !important;
