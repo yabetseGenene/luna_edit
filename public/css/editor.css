@@ -105,11 +105,12 @@
 
 .luna_name
 {
-    font-family: 'Mistral', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: rgba(243, 243, 243, 0.8);
-    letter-spacing: 2.4px;
-    font-size: 1.7em;
-    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: 1.8em;
+    font-weight: 200;
+
     text-transform: capitalize;
 }
 
