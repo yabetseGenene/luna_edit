@@ -339,8 +339,7 @@ cancelExport.addEventListener('click', () => {
 
 
 continueConversion.addEventListener('click', () => {
-  let content = window.frames[0].document.body.innerHTML
-  sendEditorContent(content, '/editor_content');
+  window.location('/conversion');
 });
 
 cancelLang.addEventListener('click', () => {
