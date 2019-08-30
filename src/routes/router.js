@@ -14,6 +14,10 @@ router.get('/editor', (request, response) => {
     response.render('editor');
 });
 
+router.get('/conversion', (request, response) => {
+    response.render('converter');
+});
+
 router.post('/editor_content', (request, response) => {
     console.log(request.body);
 });

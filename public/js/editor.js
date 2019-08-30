@@ -339,7 +339,7 @@ cancelExport.addEventListener('click', () => {
 
 
 continueConversion.addEventListener('click', () => {
-  window.location('/conversion');
+  window.location = '/conversion';
 });
 
 cancelLang.addEventListener('click', () => {
