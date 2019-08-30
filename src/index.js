@@ -2,6 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const path = require('path');
 const express_handlebars = require('express-handlebars');
+const port = process.env.PORT || 3000;
 
 const routes = require('./routes/router');
 
@@ -23,6 +24,6 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', routes);
 
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log('Editor Running on Port 3000');
 });
