@@ -62,6 +62,10 @@ let cancel = document.querySelector('#cancel');
 let linkEntry = document.querySelector('#link_entry_input');
 
 
+let exportHtml = document.querySelector('#edtr-export-html');
+let exportMD = document.querySelector('#edtr-export-markdown');
+let exportPdf = document.querySelector('#edtr-export-pdf');
+
 let isInEditMode = false;
 let toggleDesingMode = () => {
     if(isInEditMode){
@@ -87,7 +91,28 @@ let returnSelection = (value, emptyVal) => {
     emptyVal = emptyVal || null;
     let selection = value === '' ? emptyVal : value;
     return selection;
+}
 
+let sendEditorContent = (html, url) => {
+  let xhr = new XMLHttpRequest();
+  var params = JSON.stringify({ 'content': html });
+  xhr.open("POST", url, true);
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let binaryData = [];
+      let contentDispositoin = this.getResponseHeader('Content-Disposition');
+      let fileName = contentDispositoin.match(/filename="(.+)"/)[1];
+      let link = document.createElement('a');
+
+      binaryData.push(this.response);
+      link.href = window.URL.createObjectURL(new Blob(binaryData, {type: "application/zip"}))
+      link.download = fileName;
+      link.click();
+    }
+  };
+
+  xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  xhr.send(params);
 }
 
 
@@ -302,9 +327,32 @@ cancelExport.addEventListener('click', () => {
 
 
 continueConversion.addEventListener('click', () => {
-  console.log('conversion started')
+  let content = window.frames[0].document.body.innerHTML
+  sendEditorContent(content, '/editor_content');
 });
 
 cancelLang.addEventListener('click', () => {
   noticeModal.classList.toggle('hide');
+});
+
+
+exportHtml.addEventListener('click', () => {
+  let content = window.frames[0].document.body.innerHTML;
+  sendEditorContent(content, '/editor_export_html');
+});
+
+exportMD.addEventListener('click', () => {
+  let content = window.frames[0].document.body.innerHTML;
+  sendEditorContent(content, '/editor_export_md');
+});
+
+exportPdf.addEventListener('click', () => {
+  let content = window.frames[0].document.body.innerHTML;
+  var printWindow = window.open('', '', 'height=600,width=800');
+  printWindow.document.write('<html><head><title>DIV Contents</title>');
+  printWindow.document.write('</head><body >');
+  printWindow.document.write(content);
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+  printWindow.print();
 });
