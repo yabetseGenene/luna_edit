@@ -249,7 +249,7 @@
     border-radius: 2px;
     border: 2px solid #e7e7e7;
     background: #e7e7e7;
-    color: #605764;
+    color: #503F80;
     font-size: .9em;
     box-shadow: none !important;
     outline: none !important;
@@ -259,9 +259,9 @@
 
 .modalButton:hover
 {
-    background: #605764;
+    background: #503F80;
     color: #fff;
-    border-color: #605764;
+    border-color: #503F80;
 }
 
 .footer
@@ -274,7 +274,7 @@
 
 .cancel
 {
-    color: #605764;
+    color: #503F80;
 }
 
 .header-title
@@ -329,6 +329,7 @@
     padding: 10px;
     flex-grow: 1;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 .modal-menu-txt
@@ -347,7 +348,7 @@
 
 .modal-menu-option:hover > *
 {
-    color: #605764;
+    color: #503F80;
 }
 
 .header-title-large
