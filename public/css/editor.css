@@ -19,9 +19,11 @@
     margin: auto;
     background: #f8f8f8;
     border-radius: 1px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden; */
+    /* white-space: nowrap; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .editor-tools::-webkit-scrollbar {
@@ -31,7 +33,7 @@
 }
 
 .editor-tools::-webkit-scrollbar-thumb {
-    background-color: RGBA(96, 87, 100, 1.00);
+    background-color: RGBA(96, 87, 100, .5);
 }
 
 .editor-tools::-webkit-scrollbar-track {
@@ -46,8 +48,8 @@
     box-shadow: none !important;
     border: none !important;
     background: #f8f8f8;
-    color: #545A60;
-    font-size: .84em;
+    color: RGBA(96, 87, 100, 1.00);
+    font-size: .9em;
     padding: 10px 15px;
     text-align: center;
     transition: all 0.2s ease-in-out;
@@ -58,7 +60,7 @@
 
 .txt-edit-tool:hover
 {
-    color: #00C39D;
+    color: #503F80;
     background: white;
 }
 
@@ -67,7 +69,7 @@
     border: none !important;
     outline: none !important;
     background: transparent !important;
-    color: #00C39D;
+    color: #503F80;
 }
 
 #edtr-color
@@ -109,7 +111,9 @@
 {
     width: 100%;
     margin: auto;
-    background-color: #605765;
+    background: #8F67B2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8F67B2, #503F80);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8F67B2, #503F80); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     align-items: center;
 }
@@ -375,7 +379,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    background: #605764;
+    background: #7861B0;
     border-top-left-radius: 200px;
     height: 150px;
     width: 300px;
@@ -418,6 +422,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: .5;
 }
 
 .edit-mode-on
@@ -447,7 +452,7 @@
     align-items: center;
     justify-content: flex-start;
     transition: all 0.5s ease-in-out;
-    background-color: #605768;
+    background-color: #503F80;
     visibility: hidden;
 }
 
