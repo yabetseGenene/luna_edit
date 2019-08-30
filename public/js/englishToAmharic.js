@@ -251,7 +251,6 @@ let extractPhonemes = string => {
 
 let matchToAmharicPhonems = array => {
     let translationArray = [];
-    console.log(array);
     let translation = '';
     array.forEach(phoneme => {
         let val = amharicPhoneticMap.get(phoneme);
