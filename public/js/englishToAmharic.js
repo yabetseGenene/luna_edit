@@ -135,6 +135,13 @@ let setMapping = () => {
     amharicPhoneticMap.set('zo', 'ዞ');
     amharicPhoneticMap.set('zu', 'ዙ');
 
+    amharicPhoneticMap.set('x', 'ዝ');
+    amharicPhoneticMap.set('xa', 'ዛ');
+    amharicPhoneticMap.set('xe', ['ዜ', 'ዘ']);
+    amharicPhoneticMap.set('xi', 'ዚ');
+    amharicPhoneticMap.set('xo', 'ዞ');
+    amharicPhoneticMap.set('xu', 'ዙ');
+
     amharicPhoneticMap.set('y', 'ይ');
     amharicPhoneticMap.set('ya', 'ያ');
     amharicPhoneticMap.set('ye', ['ዬ', 'የ']);
@@ -244,9 +251,8 @@ let extractPhonemes = string => {
 
 let matchToAmharicPhonems = array => {
     let translationArray = [];
-
-    let translation = '';
     console.log(array);
+    let translation = '';
     array.forEach(phoneme => {
         let val = amharicPhoneticMap.get(phoneme);
         if (!Array.isArray(val)) {
@@ -267,7 +273,7 @@ let matchToAmharicPhonems = array => {
             });
         }
 
-        val = []
+        val = [];
     });
 
     return translationArray;
@@ -275,4 +281,4 @@ let matchToAmharicPhonems = array => {
 
 
 setMapping();
-console.log(matchToAmharicPhonems(extractPhonemes('chixger')));
+console.log(matchToAmharicPhonems(extractPhonemes('dani')));
