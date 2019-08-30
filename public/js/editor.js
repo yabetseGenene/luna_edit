@@ -301,6 +301,18 @@ uploadButton.forEach( btn => {
 
 });
 
+fileButton.addEventListener('change', () => {
+  let file = fileButton.files[0];
+  if (file) {
+      editorContent.document.designMode = 'On';
+      let reader = new FileReader();
+      reader.readAsText(file, "UTF-8");
+      reader.onload = function (evt) {
+          window.frames[0].document.body.innerHTML = evt.target.result;
+      }
+  }
+});
+
 lang.forEach( btn => {
   btn.addEventListener('click', () => {
     noticeModal.classList.toggle('hide');
