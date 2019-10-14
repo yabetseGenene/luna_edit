@@ -24,5 +24,5 @@ app.use(bodyParser.urlencoded({
 app.use('/', routes);
 
 app.listen(port, function () {
-    console.log('Editor Running on Port 3000');
+    console.log(`Editor Running on Port ${port}`);
 });

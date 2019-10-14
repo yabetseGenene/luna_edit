@@ -11,7 +11,7 @@ router.get('/', (request, response) => {
 });
 
 router.get('/editor', (request, response) => {
-    response.render('editor');
+    response.render('main');
 });
 
 router.get('/conversion', (request, response) => {
