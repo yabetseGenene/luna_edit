@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon -w src src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "nodemon -w src src/index.js"
   },
   "author": "Yabetse Genene",
   "license": "ISC",
