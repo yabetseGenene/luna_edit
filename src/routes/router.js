@@ -7,7 +7,7 @@ let turndownService = new TurndownService();
 
 
 router.get('/', (request, response) => {
-    response.render('preloader');
+    response.render('main');
 });
 
 router.get('/editor', (request, response) => {
