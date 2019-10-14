@@ -13,8 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', express_handlebars({
     extname: 'hbs',
-    layoutsDir: __dirname + '/views/pages/',
-    partialsDir: __dirname + '/views/partials/'
+    layoutsDir: __dirname + '/views/',
 }))
 
 app.use(bodyParser.json());
